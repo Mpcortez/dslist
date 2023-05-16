@@ -15,9 +15,9 @@ import java.io.Serializable;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Game implements Serializable {
 
+    @Id
     @EqualsAndHashCode.Include
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id
     private Long id;
 
     private String title;
@@ -27,10 +27,16 @@ public class Game implements Serializable {
 
     private String genre;
 
-    private String imageUrl;
+    private String platforms;
 
+    private Double score;
+
+    private String imgUrl;
+
+    @Column(columnDefinition = "TEXT")
     private String shortDescription;
 
+    @Column(columnDefinition = "TEXT")
     private String longDescription;
 
 }
